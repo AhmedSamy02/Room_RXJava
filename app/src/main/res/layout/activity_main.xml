@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:padding="15dp"
+        android:background="@color/white"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="Title"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:id="@+id/tvTitle"
+            android:layout_margin="15dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="15dp"
+            android:hint="Write your title here"
+            android:textColorHint="@color/grey"
+            android:id="@+id/etTitle"
+            android:maxLength="20"
+            android:layout_marginEnd="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/etTitle"
+            android:text="Body"
+            android:textSize="25sp"
+            android:textColor="@color/black"
+            android:id="@+id/tvBody"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="25dp"
+            android:textStyle="bold" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@id/tvBody"
+            app:layout_constraintStart_toStartOf="@id/tvBody"
+            android:layout_marginStart="15dp"
+            android:hint="Write your body here"
+            android:textColorHint="@color/grey"
+            android:id="@+id/etBody"
+            android:maxLength="120"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Insert"
+            app:layout_constraintTop_toBottomOf="@id/etBody"
+            app:layout_constraintStart_toStartOf="@id/tvTitle"
+            android:layout_marginTop="20dp"
+            android:id="@+id/btnInsert" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:text="Clear"
+            app:layout_constraintStart_toEndOf="@id/btnInsert"
+            app:layout_constraintEnd_toStartOf="@id/btnGet"
+            app:layout_constraintTop_toTopOf="@id/btnInsert"
+            app:layout_constraintBottom_toBottomOf="@id/btnInsert"
+            android:gravity="center"
+            android:id="@+id/clear"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GET"
+            android:textColor="@color/white"
+            app:layout_constraintTop_toTopOf="@id/btnInsert"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:id="@+id/btnGet"
+            android:layout_marginEnd="20dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:nestedScrollingEnabled="true"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/btnInsert"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginTop="30dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:id="@+id/recycler" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
